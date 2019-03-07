@@ -1,6 +1,7 @@
 ﻿using KMALab02BlahovProgramingInCSharp.Tools;
+using KMALab0BlahovProgramingInCSharp.Exceptions;
 using System;
-using System.Threading.Tasks;
+using System.Net.Mail;
 using System.Windows;
 
 namespace KMALab02BlahovProgramingInCSharp.Models
@@ -105,30 +106,18 @@ namespace KMALab02BlahovProgramingInCSharp.Models
             Goat
         }
 
-        public Person(string name, string surname, string email)
+        public Person(string name, string surname, string email) : this(name, surname, email, DateTime.Today)
         {
-            Name = name;
-            Surname = surname;
-            Email = email;
-            _isAdult = CalcAdult();
-            _sunSign = CalcSunSign();
-            _chineseSign = CalcChineseSign();
-            _isBirthday = CalcIsBirthday();
         }
 
-        public Person(string name, string surname, DateTime dateOfBirth)
+        public Person(string name, string surname, DateTime dateOfBirth) : this(name, surname, "", DateTime.Today)
         {
-            Name = name;
-            Surname = surname;
-            DateOfBirth = dateOfBirth;
-            _isAdult = CalcAdult();
-            _sunSign = CalcSunSign();
-            _chineseSign = CalcChineseSign();
-            _isBirthday = CalcIsBirthday();
         }
 
         public Person(string name, string surname, string email, DateTime dateOfBirth)
         {
+            IsCorrectDateOfBirth(dateOfBirth);
+            IsEmailValid(email);
             Name = name;
             Surname = surname;
             Email = email;
@@ -146,8 +135,6 @@ namespace KMALab02BlahovProgramingInCSharp.Models
         private bool CalcAdult()
         {
             int age = DateTime.Today.Year - DateOfBirth.Year;
-            if (_dateOfBirth > DateTime.Today || age > 135 )
-                MessageBox.Show("Illegal age!");
             if (age > 17)
                 return true;
 
@@ -233,6 +220,28 @@ namespace KMALab02BlahovProgramingInCSharp.Models
             }
 
             return false;
+        }
+
+        private void IsEmailValid(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+            }
+            catch (FormatException)
+            {
+                throw new IllegalEmailException();
+            }
+        }
+
+        private void IsCorrectDateOfBirth(DateTime date)
+        {
+            int age = DateTime.Today.Year - date.Year;
+
+            if (date > DateTime.Today)
+                throw new IsNotBirthException();
+            else if (age > 135)
+                throw new IsDeadException();
         }
     }
 }

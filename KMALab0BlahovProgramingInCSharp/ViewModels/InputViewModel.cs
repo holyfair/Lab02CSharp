@@ -5,6 +5,7 @@ using KMALab02BlahovProgramingInCSharp.Tools.Manegers;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
+using KMALab0BlahovProgramingInCSharp.Exceptions;
 
 namespace KMALab02BlahovProgramingInCSharp.ViewModels
 {
@@ -45,14 +46,23 @@ namespace KMALab02BlahovProgramingInCSharp.ViewModels
         {
             LoaderManeger.Instance.ShowLoader();
             Person person = new Person();
-                await Task.Run(() => {
-                        person = new Person(_mainPerson.Name, _mainPerson.Surname, _mainPerson.Email, _mainPerson.DateOfBirth);
-                        if (person.IsBirthday)
-                            MessageBox.Show("Happy birthday!!!");
+            try
+            {
+                await Task.Run(() =>
+                {
+                    person = new Person(_mainPerson.Name, _mainPerson.Surname, _mainPerson.Email, _mainPerson.DateOfBirth);
+                    if (person.IsBirthday)
+                        MessageBox.Show("Happy birthday!!!");
                 });
                 OutputWindow outputWindow = new OutputWindow(person);
                 outputWindow.ViewModel = "OutputWindow";
                 outputWindow.Show();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                LoaderManeger.Instance.HideLoader();
+            }
         }
 
         public RelayCommand<object> CloseCommand
