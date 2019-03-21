@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:KMALab02BlahovProgramingInCSharp"
         xmlns:windows="clr-namespace:KMALab02BlahovProgramingInCSharp.Windows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="310">
-    <Grid IsEnabled="{Binding IsControlEnabled, UpdateSourceTrigger=PropertyChanged}">
-        <windows:InputWindow></windows:InputWindow>
+        Title="MainWindow" Height="562.145" Width="600">
+    <Grid>
+        <ContentControl Name="_contentControl" IsEnabled="{Binding IsControlEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></ContentControl>
     </Grid>
+
 </Window>

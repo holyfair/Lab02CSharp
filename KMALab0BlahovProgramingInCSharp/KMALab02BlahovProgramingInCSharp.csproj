@@ -55,22 +55,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataStorage\IDataStorage.cs" />
+    <Compile Include="DataStorage\SerializedDateStorage.cs" />
     <Compile Include="Exceptions\IllegalEmailException.cs" />
     <Compile Include="Exceptions\IsDeadException.cs" />
     <Compile Include="Exceptions\IsNotBirthException.cs" />
+    <Compile Include="Exceptions\UserExistsException.cs" />
+    <Compile Include="Exceptions\UserIsNotExistsException.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Tools\BaseViewModel.cs" />
+    <Compile Include="Tools\FileFolderHelper.cs" />
     <Compile Include="Tools\ILoaderOwner.cs" />
+    <Compile Include="Tools\Navigation\BaseNavigationModel.cs" />
+    <Compile Include="Tools\Navigation\IContentOwner.cs" />
+    <Compile Include="Tools\Navigation\INavigatable.cs" />
+    <Compile Include="Tools\Navigation\INavigationModel.cs" />
+    <Compile Include="Tools\Navigation\InitializationNavigationModel.cs" />
     <Compile Include="Tools\Manegers\LoaderManeger.cs" />
+    <Compile Include="Tools\Manegers\NavigationManager.cs" />
+    <Compile Include="Tools\Manegers\SerializationManager.cs" />
+    <Compile Include="Tools\Manegers\StationManager.cs" />
     <Compile Include="Tools\RelayCommand.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\InputViewModel.cs" />
-    <Compile Include="ViewModels\OutputViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\PersonsListViewModel.cs" />
+    <Compile Include="ViewModels\RemovePersonViewModel.cs" />
     <Compile Include="Windows\InputWindow.xaml.cs">
       <DependentUpon>InputWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\OutputWindow.xaml.cs">
-      <DependentUpon>OutputWindow.xaml</DependentUpon>
+    <Compile Include="Windows\PersonsListView.xaml.cs">
+      <DependentUpon>PersonsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RemoveUser.xaml.cs">
+      <DependentUpon>RemoveUser.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -88,7 +105,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\OutputWindow.xaml">
+    <Page Include="Windows\PersonsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RemoveUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

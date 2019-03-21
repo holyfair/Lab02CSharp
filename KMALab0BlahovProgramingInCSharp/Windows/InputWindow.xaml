@@ -13,7 +13,7 @@
         <Label Content="E-mail:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,88,0,0"/>
         <DatePicker HorizontalAlignment="Left" Margin="98,115,0,0" VerticalAlignment="Top" Width="186" SelectedDate="{Binding MainPerson.DateOfBirth, UpdateSourceTrigger=PropertyChanged}"/>
         <Label Content="Date of birth:" HorizontalAlignment="Left" Margin="21,114,0,0" VerticalAlignment="Top"/>
-        <Button Content="Proceed" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="128" Command="{Binding Proceed}">
+        <Button Content="{Binding ButtonName}" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="128" Command="{Binding Proceed}">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Style.Triggers>

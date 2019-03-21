@@ -1,12 +1,16 @@
-﻿using KMALab02BlahovProgramingInCSharp.Tools;
+﻿using KMALab02BlahovProgramingInCSharp.Properties;
+using KMALab02BlahovProgramingInCSharp.Tools;
 using KMALab0BlahovProgramingInCSharp.Exceptions;
 using System;
+using System.ComponentModel;
 using System.Net.Mail;
+using System.Runtime.CompilerServices;
 using System.Windows;
 
 namespace KMALab02BlahovProgramingInCSharp.Models
 {
-    public class Person : BaseViewModel
+    [Serializable]
+    public class Person
     {
         private string _name;
         private string _surname;
@@ -243,6 +247,15 @@ namespace KMALab02BlahovProgramingInCSharp.Models
             else if (age > 135)
                 throw new IsDeadException();
         }
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 }
 

@@ -1,9 +1,11 @@
 ﻿using KMALab02BlahovProgramingInCSharp.Properties;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace KMALab02BlahovProgramingInCSharp.Tools
 {
+    [Serializable]
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
         #region INotifyPropertyChanged

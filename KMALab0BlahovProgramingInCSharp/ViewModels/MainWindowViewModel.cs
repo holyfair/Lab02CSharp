@@ -1,12 +1,12 @@
 ﻿using KMALab02BlahovProgramingInCSharp.Tools;
 using KMALab02BlahovProgramingInCSharp.Tools.Manegers;
 
-namespace KMALab02BlahovProgramingInCSharp.ViewModels
+namespace KMALab0BlahovProgramingInCSharp.ViewModels
 {
-    internal class MainWindowViewModel : BaseViewModel , ILoaderOwner
+    internal class MainWindowViewModel : BaseViewModel, ILoaderOwner
     {
         private bool _isControlEnabled = true;
-        
+
         public bool IsControlEnabled
         {
             get { return _isControlEnabled; }
@@ -21,6 +21,5 @@ namespace KMALab02BlahovProgramingInCSharp.ViewModels
         {
             LoaderManeger.Instance.Initialize(this);
         }
-
     }
 }
