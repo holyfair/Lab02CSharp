@@ -1,5 +1,4 @@
-﻿using KMALab02BlahovProgramingInCSharp.Tools;
-using System;
+﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 

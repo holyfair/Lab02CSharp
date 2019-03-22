@@ -1,6 +1,5 @@
 ﻿using KMALab02BlahovProgramingInCSharp.Windows;
 using System;
-using MainView = KMALab02BlahovProgramingInCSharp.Windows.PersonsListView;
 
 namespace KMALab02BlahovProgramingInCSharp.Tools.Navigation
 {

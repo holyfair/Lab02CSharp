@@ -12,7 +12,6 @@ namespace KMALab02BlahovProgramingInCSharp.ViewModels
 {
     internal class InputViewModel : BaseViewModel
     {
-        public Action CloseAction { get; set; }
         private RelayCommand<object> _closeCommand;
         private Person _mainPerson;
         private RelayCommand<object> _proceed;
@@ -86,8 +85,6 @@ namespace KMALab02BlahovProgramingInCSharp.ViewModels
                     else if(ButtonName == "Edit")
                     {
                         person = new Person(_mainPerson.Name, _mainPerson.Surname, _mainPerson.Email, _mainPerson.DateOfBirth);
-                        MessageBox.Show(person.Email);
-                        MessageBox.Show(CurrentPerson.Email);
                         if (StationManager.DataStorage.PersonExists(person.Email) && !person.Email.Equals(CurrentPerson.Email))
                             throw new UserExistsException();
 

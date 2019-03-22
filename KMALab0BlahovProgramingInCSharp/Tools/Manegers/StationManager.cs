@@ -10,8 +10,6 @@ namespace KMALab02BlahovProgramingInCSharp.Tools.Manegers
 
         private static IDataStorage _dataStorage;
 
-        internal static Person CurrentPerson { get; set; }
-
         internal static IDataStorage DataStorage
         {
             get { return _dataStorage; }

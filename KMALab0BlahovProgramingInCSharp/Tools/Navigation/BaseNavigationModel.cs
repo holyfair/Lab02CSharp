@@ -34,8 +34,8 @@ namespace KMALab02BlahovProgramingInCSharp.Tools.Navigation
                 InitializeView(viewType);
             ContentOwner.ContentControl.Content = ViewsDictionary[viewType];
         }
+        
 
-        //НЕ ТРОГАТЬ, ДЕБИЛ!!!
         public void Navigate(ViewType viewType, bool refresh)
         {
             if (!ViewsDictionary.ContainsKey(viewType))

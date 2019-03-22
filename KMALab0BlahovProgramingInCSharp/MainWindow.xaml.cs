@@ -1,9 +1,7 @@
 ﻿using KMALab02BlahovProgramingInCSharp.DataStorage;
 using KMALab02BlahovProgramingInCSharp.Tools.Manegers;
 using KMALab02BlahovProgramingInCSharp.Tools.Navigation;
-using KMALab02BlahovProgramingInCSharp.ViewModels;
 using KMALab0BlahovProgramingInCSharp.ViewModels;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 

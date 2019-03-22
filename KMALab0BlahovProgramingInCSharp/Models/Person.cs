@@ -1,11 +1,9 @@
 ﻿using KMALab02BlahovProgramingInCSharp.Properties;
-using KMALab02BlahovProgramingInCSharp.Tools;
 using KMALab0BlahovProgramingInCSharp.Exceptions;
 using System;
 using System.ComponentModel;
 using System.Net.Mail;
 using System.Runtime.CompilerServices;
-using System.Windows;
 
 namespace KMALab02BlahovProgramingInCSharp.Models
 {

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KMALab02BlahovProgramingInCSharp.Tools
 {
@@ -16,7 +12,7 @@ namespace KMALab02BlahovProgramingInCSharp.Tools
             Path.Combine(AppDataPath, "CSharpKMA");
 
         internal static readonly string StorageFilePath =
-            Path.Combine(AppFolderPath, "Storage.txt");
+            Path.Combine(AppFolderPath, "Blahov_Storage.txt");
 
         internal static bool CreateFolderAndCheckFileExistance(string filePath)
         {

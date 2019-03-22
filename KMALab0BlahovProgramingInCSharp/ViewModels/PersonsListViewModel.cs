@@ -5,7 +5,6 @@ using KMALab02BlahovProgramingInCSharp.Tools.Navigation;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows;
 
 namespace KMALab02BlahovProgramingInCSharp.ViewModels
 {
